@@ -1,0 +1,320 @@
+{
+ "changelog": [
+  {
+   "date": "2026-11-19",
+   "version": "v1.1",
+   "changes": [
+    "7-day model first fitted: no variable (momentum, Brent, FX) beat 'assume no change' out of sample, so all weights are 0 and the forecast is 'no change'.",
+    "30-day model first fitted: no variable (momentum, Brent, FX) beat 'assume no change' out of sample, so all weights are 0 and the forecast is 'no change'."
+   ]
+  }
+ ],
+ "import_gap": {
+  "base_months": "2023-04 to 2024-03",
+  "series": [
+   [
+    "2023-04",
+    -3.88
+   ],
+   [
+    "2023-05",
+    2.35
+   ],
+   [
+    "2023-06",
+    1.17
+   ],
+   [
+    "2023-07",
+    -2.43
+   ],
+   [
+    "2023-08",
+    2.12
+   ],
+   [
+    "2023-09",
+    -3.28
+   ],
+   [
+    "2023-10",
+    4.42
+   ],
+   [
+    "2023-11",
+    0.45
+   ],
+   [
+    "2023-12",
+    0.31
+   ],
+   [
+    "2024-01",
+    -1.87
+   ],
+   [
+    "2024-02",
+    0.02
+   ],
+   [
+    "2024-03",
+    1.16
+   ],
+   [
+    "2024-04",
+    2.07
+   ],
+   [
+    "2024-05",
+    2.21
+   ],
+   [
+    "2024-06",
+    3.66
+   ],
+   [
+    "2024-07",
+    4.18
+   ],
+   [
+    "2024-08",
+    6.09
+   ],
+   [
+    "2024-09",
+    7.8
+   ],
+   [
+    "2024-10",
+    4.24
+   ],
+   [
+    "2024-11",
+    6.85
+   ],
+   [
+    "2024-12",
+    3.71
+   ],
+   [
+    "2025-01",
+    1.56
+   ],
+   [
+    "2025-02",
+    0.77
+   ],
+   [
+    "2025-03",
+    5.2
+   ],
+   [
+    "2025-04",
+    13.71
+   ],
+   [
+    "2025-05",
+    9.05
+   ],
+   [
+    "2025-06",
+    8.66
+   ],
+   [
+    "2025-07",
+    10.51
+   ],
+   [
+    "2025-08",
+    7.91
+   ],
+   [
+    "2025-09",
+    8.85
+   ],
+   [
+    "2025-10",
+    11.91
+   ],
+   [
+    "2025-11",
+    7.83
+   ],
+   [
+    "2025-12",
+    1.59
+   ],
+   [
+    "2026-01",
+    -4.45
+   ],
+   [
+    "2026-02",
+    -3.13
+   ],
+   [
+    "2026-03",
+    -17.74
+   ],
+   [
+    "2026-04",
+    -10.53
+   ],
+   [
+    "2026-05",
+    -10.14
+   ],
+   [
+    "2026-06",
+    -4.25
+   ],
+   [
+    "2026-07",
+    -3.77
+   ],
+   [
+    "2026-08",
+    -4.51
+   ],
+   [
+    "2026-09",
+    -6.25
+   ],
+   [
+    "2026-10",
+    -6.4
+   ]
+  ],
+  "latest_month": "2026-10",
+  "latest_gap_pct": -6.4
+ },
+ "version": "v1.1",
+ "updated_ist": "2026-11-19 08:00 IST",
+ "horizons": {
+  "7": {
+   "lag_days": 0,
+   "gate": {
+    "mask": [
+     0,
+     0,
+     0
+    ],
+    "why": {
+     "momentum": "weight set to 0: out-of-sample error was Rs 1.78/kg with it and Rs 1.77/kg without it, so it did not cut error by at least 1%",
+     "brent": "weight set to 0: out-of-sample error was Rs 1.77/kg with it and Rs 1.77/kg without it, so it did not cut error by at least 1%",
+     "fx": "weight set to 0: out-of-sample error was Rs 1.77/kg with it and Rs 1.78/kg without it, so it did not cut error by at least 1%"
+    }
+   },
+   "w_momentum": 0.0,
+   "w_brent": 0.0,
+   "w_fx": 0.0,
+   "train_n": 0,
+   "train_rmse_pct": 0.0,
+   "train_first": "2022-12-02",
+   "train_last": "2026-11-19",
+   "error_band_rs": 2.92,
+   "error_band_basis": "80th percentile of back-test errors (too few live results yet)"
+  },
+  "30": {
+   "lag_days": 0,
+   "gate": {
+    "mask": [
+     0,
+     0,
+     0
+    ],
+    "why": {
+     "momentum": "earned weight: out-of-sample error Rs 3.73/kg with it vs Rs 3.78/kg without it; but the combined model (Rs 3.46/kg) still did not beat 'assume no change' (Rs 3.39/kg), so weight set to 0",
+     "brent": "weight set to 0: out-of-sample error was Rs 3.73/kg with it and Rs 3.5/kg without it, so it did not cut error by at least 1%",
+     "fx": "weight set to 0: out-of-sample error was Rs 3.5/kg with it and Rs 3.46/kg without it, so it did not cut error by at least 1%"
+    }
+   },
+   "w_momentum": 0.0,
+   "w_brent": 0.0,
+   "w_fx": 0.0,
+   "train_n": 0,
+   "train_rmse_pct": 0.0,
+   "train_first": "2022-12-02",
+   "train_last": "2026-11-19",
+   "error_band_rs": 5.2,
+   "error_band_basis": "80th percentile of back-test errors (too few live results yet)"
+  }
+ },
+ "spread_rs": 11.82,
+ "backtest": {
+  "7": {
+   "n": 141,
+   "start": "2023-12-13",
+   "end": "2026-11-06",
+   "hit_rate": 34.0,
+   "naive_hit_rate": 34.0,
+   "mae_rs": 1.78,
+   "naive_mae_rs": 1.78,
+   "err_band_rs": 2.92
+  },
+  "30": {
+   "n": 138,
+   "start": "2023-12-13",
+   "end": "2026-10-16",
+   "hit_rate": 38.4,
+   "naive_hit_rate": 38.4,
+   "mae_rs": 3.39,
+   "naive_mae_rs": 3.39,
+   "err_band_rs": 5.2
+  }
+ },
+ "data_last_date": "2026-11-19",
+ "formula": "STTIE prediction ledger, scoring and learning. Numbers only from data/live.json (public sources).\nNo AI is used anywhere here; every number is plain arithmetic or least squares, written to JSON.\n\nTarget: China-cost-based POY estimate in Rs/kg, ex-VAT, ex-GST\n  PET cost  = (0.865*PTA + 0.335*MEG) / 1.13 * (INR per CNY) / 1000\n  spread    = median over last 60 trading days of (PSF/1.13*INRperCNY/1000 - PET cost)   [China market spread, proxy]\n  POY est.  = PET cost + spread\nForecast of PET % change over h days (h = 7, 30):\n  dPET% = w_mom * (PET % change over last h days)\n        + w_brent * (Brent % change over the h days ending L days ago)\n        + w_fx * (INR-per-CNY % change over last h days)\n  weights re-fitted every run by ridge least squares on realised history (heavy shrinkage toward 'no change');\n  Brent lag L re-chosen every run from {0,3,7,14,21} days by best fit on realised history.",
+ "band_pct": {
+  "7": 1.0,
+  "30": 2.0
+ },
+ "cc_spread_assumption_pct": 4.0,
+ "rule1": {
+  "params": {
+   "days": 7,
+   "pass_pct": 100,
+   "band_pct": 1.0
+  },
+  "backtest": {
+   "n": 705,
+   "start": "2023-12-13",
+   "hit_rate": 43.1,
+   "by_call": {
+    "wait": {
+     "n": 208,
+     "hit_rate": 39.4
+    },
+    "buy small": {
+     "n": 272,
+     "hit_rate": 42.6
+    },
+    "buy now": {
+     "n": 225,
+     "hit_rate": 47.1
+    }
+   },
+   "note": "Back-test on China futures data (PSF-based POY estimate as the 'price'), not on Indian mill quotes."
+  },
+  "text": "Mills (e.g. Reliance) pass PTA/MEG cost changes into POY within about 7 days, so last week's raw-material move shows where yarn is going next week."
+ },
+ "import_gap_backtest": {
+  "n": 42,
+  "hit_rate": 78.6
+ },
+ "lessons": [
+  "7-day back-test (2023-12-13 to 2026-11-06, 141 calls): direction right 34.0% vs 34.0% for 'assume no change'; average error Rs 1.78/kg vs Rs 1.78/kg for 'no change'. The model does NOT beat 'no change' yet, so treat its calls as weak.",
+  "7-day momentum: weight set to 0: out-of-sample error was Rs 1.78/kg with it and Rs 1.77/kg without it, so it did not cut error by at least 1%.",
+  "7-day brent: weight set to 0: out-of-sample error was Rs 1.77/kg with it and Rs 1.77/kg without it, so it did not cut error by at least 1%.",
+  "7-day fx: weight set to 0: out-of-sample error was Rs 1.77/kg with it and Rs 1.78/kg without it, so it did not cut error by at least 1%.",
+  "7-day: no variable has proven predictive value yet, so the forecast is 'no change' and the app makes no strong buy/wait call.",
+  "30-day back-test (2023-12-13 to 2026-10-16, 138 calls): direction right 38.4% vs 38.4% for 'assume no change'; average error Rs 3.39/kg vs Rs 3.39/kg for 'no change'. The model does NOT beat 'no change' yet, so treat its calls as weak.",
+  "30-day momentum: earned weight: out-of-sample error Rs 3.73/kg with it vs Rs 3.78/kg without it; but the combined model (Rs 3.46/kg) still did not beat 'assume no change' (Rs 3.39/kg), so weight set to 0.",
+  "30-day brent: weight set to 0: out-of-sample error was Rs 3.73/kg with it and Rs 3.5/kg without it, so it did not cut error by at least 1%.",
+  "30-day fx: weight set to 0: out-of-sample error was Rs 3.5/kg with it and Rs 3.46/kg without it, so it did not cut error by at least 1%.",
+  "30-day: no variable has proven predictive value yet, so the forecast is 'no change' and the app makes no strong buy/wait call.",
+  "Import check back-test: the month-ahead 'import gap' call (it assumes this month's gap persists) held 78.6% of the time over 42 months. Latest gap -6.4% (2026-10): imports look dearer than usual.",
+  "Rule of thumb 1 ('mills follow PTA/MEG within a week') back-test since 2023-12-13: right 43.1% of 705 days (wait: 39.4% of 208, buy small: 42.6% of 272, buy now: 47.1% of 225). On China data, not Indian mill quotes.",
+  "Live track record: learning, too few results yet (0 scored)."
+ ]
+}

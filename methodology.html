@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>STTIE methodology</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%A7%B5%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+<style>.m{max-width:860px;margin:0 auto}.m h2{font-size:1.05rem;margin:18px 0 6px;color:#7dd3fc}.m p,.m li{font-size:.9rem;color:#cbd5e1;margin-bottom:6px}.m ul{padding-left:18px}</style></head>
+<body><div class="m">
+<p><a href="index.html">← main screen</a> · <a href="index.html#details">details</a></p>
+<h1 style="font-size:1.3rem;margin-top:8px">STTIE methodology</h1>
+<p class="sub">Surat Textile Trading Intelligence Engine. Decision support for polyester yarn traders and the bankers who lend to them. It is not investment, trading or credit advice.</p>
+
+<h2>1. Principles</h2>
+<ul><li>No invented data. Every number is (a) fetched automatically from a named public source with its date, (b) an official statutory rate with the date it was checked, (c) a calculation from those numbers with the formula shown, or (d) an input or assumption labelled as such, which you can edit.</li>
+<li>Where no free, reliable source exists the app shows <i>no live source</i>, not a guess.</li>
+<li>No AI produces any number, call, weight or translation. All text is fixed templates with numbers inserted.</li>
+<li>Zero running cost: static GitHub Pages and a scheduled GitHub Actions job. No keys, no backend, no login.</li></ul>
+
+<h2>2. Data</h2>
+<ul><li><b>China PTA, MEG, PX and polyester staple fibre (PSF) futures</b> (Zhengzhou and Dalian, continuous main contract), daily close plus latest quote, from the Sina Finance public quote feed. CNY per tonne, including 13% China VAT.</li>
+<li><b>Brent crude</b>: US EIA daily spot via FRED (DCOILBRENTEU).</li>
+<li><b>USD/INR</b>: FBIL reference rate as shown on the RBI homepage, used for today's figures. History comes from ECB reference rates (Frankfurter API), as does <b>USD/CNY</b>.</li>
+<li><b>RBI policy repo rate</b>: RBI homepage.</li>
+<li><b>WPI item indices</b> (PTA, MEG, synthetic polyester yarn, PSF, polyester filament fabrics and others; base 2022-23 = 100): the monthly item-level file from the Office of the Economic Adviser, DPIIT.</li>
+<li><b>Customs and GST rates</b> for HS 5402 (BCD 5%, SWS 10%, AIDC nil, IGST 5% since 22 Sep 2025, no anti-dumping duty in force on POY or FDY, a DGTR anti-dumping probe open on DTY/PTY from China, BIS QCOs rescinded 12 Nov 2025): checked by hand and dated in data/rates.json.</li>
+<li><b>Headlines</b>: Google News RSS, shown as context only and never used in a calculation.</li></ul>
+
+<h2>3. Price estimate</h2>
+<p>PET cost (₹/kg) = (0.865 × PTA + 0.335 × MEG) ÷ 1.13 × (INR per CNY) ÷ 1000. The ratios are the industry-standard raw-material consumption per kg of polyester and can be edited.</p>
+<p>POY estimate = PET cost + spread. The default spread is the 60-trading-day median of (China PSF price − PET cost). That is a real, observed polymer-to-fibre margin, used as a proxy for POY. If you log your own POY deal prices, the median of (deal price − PET cost on that date) replaces it. FDY and DTY are the POY estimate plus a premium, which is a labelled assumption.</p>
+<p>This is an estimate of China-cost-equivalent yarn, not a mill quote. Indian list prices can sit above or below it.</p>
+
+<h2>4. Three layers of reasoning</h2>
+<p><b>Layer 1: trader rules of thumb</b> (editable): mills pass PTA/MEG cost changes into POY within N days at P%; buy ahead only if the expected rise beats the interest cost of holding; don't stock up when weavers' fabric prices lag yarn prices (official WPI); import only if the landed saving beats a minimum; keep minimum cash. Rule 1 is logged and scored daily with default settings, and back-tested.</p>
+<p><b>Layer 2: context</b>: crude, FX, RBI rates, China feedstock, duties and official Indian price indices.</p>
+<p><b>Layer 3: learning loop</b>. The forecast of the PET-cost % change over h = 7 and 30 days is w<sub>1</sub>·(PET trend over the last h days) + w<sub>2</sub>·(Brent change, lagged L days) + w<sub>3</sub>·(INR-per-CNY change). On every run the weights are re-fitted on realised history by ridge least squares, with heavy shrinkage toward "no change". L is chosen from {0, 3, 7, 14, 21} days by best fit. Each variable then goes through a walk-forward test: it keeps its weight only if including it cuts out-of-sample error by at least 1%. If the combined model does not beat "assume no change" by 1%, every weight is set to 0. Changes are written to a dated changelog, and each model version is archived in data/models/.</p>
+
+<h2>5. Today's answer (main screen)</h2>
+<p>If the learning model has proven an edge, its 30-day call is used: buy now if the expected rise is more than the holding interest plus half the error band, wait if the expected fall is more than half the error band, otherwise buy as needed. Otherwise, Rule 1 is used: buy now, wait or buy small, depending on whether the expected move from the last N days of PET cost is beyond ±band% of price.</p>
+<p>Import vs domestic: with your mill quote, the comparison is the economic landed cost (CIF + BCD + AIDC + SWS + ADD + port + truck + buffers + transit interest; IGST is excluded because it is recoverable) against your quote. Without a quote, the official monthly gap between Indian WPI polyester yarn and the China-landed cost index is used, with both rebased to their first 12 common months.</p>
+
+<h2>6. Scoring</h2>
+<p>Calls are logged once per data date in data/predictions.json with all inputs and the model version. When the horizon passes, they are scored against the same public series: direction (±1% band for 7 days, ±2% for 30 days), buy call (buy now is a hit if the price rose by more than the carry; wait is a hit if it fell; buy small is a hit if it stayed within the band), the error in ₹/kg, and whether it fell inside the error band (the 80th percentile of past errors). The import call is scored against the next official WPI month. A CSV of everything is at data/track_record.csv.</p>
+<p>Back-tests are walk-forward on the history actually fetched (about 4 years), and each call uses only data from before it. They are labelled as back-tests. Live results show as "learning" until 10 are scored.</p>
+
+<h2>7. Known limits</h2>
+<ul><li>Calls are scored against a China-cost estimate, not Indian mill prices. Reliance and other mill price lists are not public, and there is no backend to collect users' quotes.</li>
+<li>Continuous futures series can jump when the contract rolls.</li>
+<li>The WPI is monthly and its latest month is provisional.</li>
+<li>Freight, port, truck and buffer charges are assumptions until you replace them.</li>
+<li>At launch, back-tests show no variable reliably beats "no change" over 7 or 30 days, and Rule 1 is right about 43% of the time on China data. The app reports this rather than hiding it.</li></ul>
+
+<h2>8. Disclaimer</h2>
+<p>For information and decision support only. Not investment, trading, tax or credit advice. Verify prices with your supplier and duties on ICEGATE before any transaction.</p>
+</div></body></html>

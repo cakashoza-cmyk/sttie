@@ -1,0 +1,116 @@
+{
+"predictions": [
+{
+"id": "2026-11-19-7d",
+"made_on": "2026-11-19",
+"logged_ist": "2026-11-19 08:00 IST",
+"horizon_days": 7,
+"target_date": "2026-11-26",
+"model_version": "v1.1",
+"pred_pct": -0.0,
+"direction": "flat",
+"pred_poy_rs": 94.39,
+"error_band_rs": 2.92,
+"buy_call": "buy as needed",
+"raw_buy_call": "buy as needed",
+"model_has_edge": false,
+"import_call": null,
+"inputs": {
+"pta_cny": 5822.0,
+"meg_cny": 4840.0,
+"brent": 92.94,
+"usdinr": 93.44,
+"usdcny": 6.6672,
+"inr_per_cny": 14.0149,
+"pet_rs": 82.57,
+"spread_rs": 11.82,
+"poy_rs": 94.39,
+"features_pct": [
+-4.45,
+-2.6,
+-0.62
+],
+"weights": [
+0.0,
+0.0,
+0.0
+],
+"brent_lag_days": 0,
+"repo_pct": 5.5,
+"cc_rate_pct": 9.5,
+"carry_rs": 0.17,
+"duty_mult": 1.055,
+"import_rs": 99.58,
+"gap_month": "2026-10",
+"gap_pct": -6.4
+}
+},
+{
+"id": "2026-11-19-30d",
+"made_on": "2026-11-19",
+"logged_ist": "2026-11-19 08:00 IST",
+"horizon_days": 30,
+"target_date": "2026-12-19",
+"model_version": "v1.1",
+"pred_pct": -0.0,
+"direction": "flat",
+"pred_poy_rs": 94.39,
+"error_band_rs": 5.2,
+"buy_call": "buy as needed",
+"raw_buy_call": "buy as needed",
+"model_has_edge": false,
+"import_call": "imports look dearer than usual",
+"inputs": {
+"pta_cny": 5822.0,
+"meg_cny": 4840.0,
+"brent": 92.94,
+"usdinr": 93.44,
+"usdcny": 6.6672,
+"inr_per_cny": 14.0149,
+"pet_rs": 82.57,
+"spread_rs": 11.82,
+"poy_rs": 94.39,
+"features_pct": [
+-10.28,
+-19.34,
+-1.41
+],
+"weights": [
+0.0,
+0.0,
+0.0
+],
+"brent_lag_days": 0,
+"repo_pct": 5.5,
+"cc_rate_pct": 9.5,
+"carry_rs": 0.74,
+"duty_mult": 1.055,
+"import_rs": 99.58,
+"gap_month": "2026-10",
+"gap_pct": -6.4
+}
+},
+{
+"id": "2026-11-19-rule1",
+"kind": "rule1",
+"made_on": "2026-11-19",
+"logged_ist": "2026-11-19 08:00 IST",
+"horizon_days": 7,
+"target_date": "2026-11-26",
+"model_version": "v1.1",
+"buy_call": "wait",
+"expected_move_rs": -3.85,
+"rule": {
+"days": 7,
+"pass_pct": 100,
+"band_pct": 1.0
+},
+"inputs": {
+"pet_rs": 82.57,
+"pet_rs_n_days_ago": 86.42,
+"poy_rs": 94.39,
+"spread_rs": 11.82
+}
+}
+]
+}

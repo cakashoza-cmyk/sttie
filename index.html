@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d16">
+<title>સુરત યાર્ન ભાવ સલાહ · STTIE</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%A7%B5%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- MAIN SCREEN (simple, Gujarati by default) -->
+<main id="simple" class="simple">
+  <div class="langs" id="langs"><button data-l="gu">ગુજરાતી</button><button data-l="hi">हिन्दी</button><button data-l="en">English</button></div>
+  <h1 class="s-title" id="s-title"></h1>
+  <section class="answer" id="answer"><div class="a-label" id="a-today"></div><div class="a-main" id="a-main">…</div><div class="a-reason" id="a-reason"></div></section>
+  <section class="tile"><div class="t-label" id="p-title"></div><div class="t-big" id="p-big">…</div><div class="t-sub" id="p-sub"></div></section>
+  <section class="tile"><div class="t-label" id="i-title"></div><div class="t-mid" id="i-main">…</div><div class="t-sub" id="i-sub"></div></section>
+  <section class="tile"><div class="t-label" id="h-title"></div><div class="t-mid" id="h-main">…</div><div class="t-sub" id="h-sub"></div></section>
+  <section class="tile"><label class="t-label" for="q-input" id="q-label"></label>
+    <div class="q-row"><input id="q-input" type="number" inputmode="decimal" min="40" max="300" step="0.25" placeholder="₹ / kg"><button class="q-clear" id="q-clear"></button></div></section>
+  <div class="actions"><button class="wa" id="wa-btn"></button><button class="speak" id="speak-btn" style="display:none"></button></div>
+  <p class="t-sub center" id="s-updated"></p>
+  <p class="t-sub center" id="s-src"></p>
+  <p class="t-sub center" id="s-disc"></p>
+  <p class="center"><a href="#details" id="details-link" class="details-link"></a></p>
+</main>
+
+<!-- DETAILS (English, for bankers and advisers) -->
+<div id="details" class="container" style="display:none">
+<header>
+  <h1>STTIE · Surat Yarn Desk <small>Details for bankers and advisers: data, formulas, rules, learning loop. <a href="#" id="back-link">← main screen</a></small></h1>
+  <div class="meta"><div id="meta-data">Loading data…</div><div id="meta-model"></div></div>
+</header>
+<div class="tabs" id="tabs">
+  <button class="tab active" data-s="today">1. Today</button>
+  <button class="tab" data-s="trend">2. Where yarn is heading</button>
+  <button class="tab" data-s="buy">3. Buy now or wait (your rules)</button>
+  <button class="tab" data-s="import">4. Import vs domestic</button>
+  <button class="tab" data-s="alloc">5. How much to stock</button>
+  <button class="tab" data-s="whatif">6. What-if</button>
+  <button class="tab" data-s="log">7. My market log</button>
+  <button class="tab" data-s="track">8. Track record &amp; learning</button>
+  <button class="tab" data-s="sources">9. Sources &amp; formulas</button>
+</div>
+<div id="err" class="warn" style="display:none"></div>
+<div class="screen active" id="s-today"></div>
+<div class="screen" id="s-trend"></div>
+<div class="screen" id="s-buy"></div>
+<div class="screen" id="s-import"></div>
+<div class="screen" id="s-alloc"></div>
+<div class="screen" id="s-whatif"></div>
+<div class="screen" id="s-log"></div>
+<div class="screen" id="s-track"></div>
+<div class="screen" id="s-sources"></div>
+<p class="sub" style="margin-top:16px">Public data only. Your own entries stay in this browser (localStorage) and are never uploaded. Not investment advice. Legend: <span class="pill p-live">live</span> auto-fetched market data · <span class="pill p-official">official</span> government/RBI data · <span class="pill p-est">estimate</span> calculated by the app · <span class="pill p-input">your input</span> · <span class="pill p-assume">assumption</span> editable default · <span class="pill p-none">no live source</span></p>
+</div>
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

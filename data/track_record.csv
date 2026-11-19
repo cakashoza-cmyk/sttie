@@ -1,0 +1,4 @@
+id,kind,made_on,horizon_days,target_date,model_version,buy_call,direction,pred_pct,pred_poy_rs,expected_move_rs,error_band_rs,import_call,model_has_edge,scored,realised_on,realised_poy_rs,error_rs,hit_direction,hit_buy_call,hit_import,poy_rs_at_call,pet_rs_at_call
+2026-11-19-7d,model,2026-11-19,7,2026-11-26,v1.1,buy as needed,flat,-0.0,94.39,,2.92,,False,,,,,,,,94.39,82.57
+2026-11-19-30d,model,2026-11-19,30,2026-12-19,v1.1,buy as needed,flat,-0.0,94.39,,5.2,imports look dearer than usual,False,,,,,,,,94.39,82.57
+2026-11-19-rule1,rule1,2026-11-19,7,2026-11-26,v1.1,wait,,,,-3.85,,,,,,,,,,,94.39,82.57
