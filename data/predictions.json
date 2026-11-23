@@ -223,6 +223,118 @@
 "poy_rs": 95.86,
 "spread_rs": 11.82
 }
+},
+{
+"id": "2026-11-23-7d",
+"made_on": "2026-11-23",
+"logged_ist": "2026-11-23 17:06 IST",
+"horizon_days": 7,
+"target_date": "2026-11-30",
+"model_version": "v1.1",
+"pred_pct": 0.0,
+"direction": "flat",
+"pred_poy_rs": 93.46,
+"error_band_rs": 2.94,
+"buy_call": "buy as needed",
+"raw_buy_call": "buy as needed",
+"model_has_edge": false,
+"import_call": null,
+"inputs": {
+"pta_cny": 5828.0,
+"meg_cny": 4799.0,
+"brent": 92.94,
+"usdinr": 92.68,
+"usdcny": 6.6777,
+"inr_per_cny": 13.879,
+"pet_rs": 81.66,
+"spread_rs": 11.79,
+"poy_rs": 93.46,
+"features_pct": [
+-6.5,
+0.04,
+-1.5
+],
+"weights": [
+0.0,
+0.0,
+0.0
+],
+"brent_lag_days": 0,
+"repo_pct": 5.5,
+"cc_rate_pct": 9.5,
+"carry_rs": 0.17,
+"duty_mult": 1.055,
+"import_rs": 98.6,
+"gap_month": "2026-10",
+"gap_pct": -6.4
+}
+},
+{
+"id": "2026-11-23-30d",
+"made_on": "2026-11-23",
+"logged_ist": "2026-11-23 17:06 IST",
+"horizon_days": 30,
+"target_date": "2026-12-23",
+"model_version": "v1.1",
+"pred_pct": -0.0,
+"direction": "flat",
+"pred_poy_rs": 93.46,
+"error_band_rs": 5.28,
+"buy_call": "buy as needed",
+"raw_buy_call": "buy as needed",
+"model_has_edge": false,
+"import_call": "imports look dearer than usual",
+"inputs": {
+"pta_cny": 5828.0,
+"meg_cny": 4799.0,
+"brent": 92.94,
+"usdinr": 92.68,
+"usdcny": 6.6777,
+"inr_per_cny": 13.879,
+"pet_rs": 81.66,
+"spread_rs": 11.79,
+"poy_rs": 93.46,
+"features_pct": [
+-11.13,
+-27.56,
+-2.49
+],
+"weights": [
+0.0,
+0.0,
+0.0
+],
+"brent_lag_days": 0,
+"repo_pct": 5.5,
+"cc_rate_pct": 9.5,
+"carry_rs": 0.73,
+"duty_mult": 1.055,
+"import_rs": 98.6,
+"gap_month": "2026-10",
+"gap_pct": -6.4
+}
+},
+{
+"id": "2026-11-23-rule1",
+"kind": "rule1",
+"made_on": "2026-11-23",
+"logged_ist": "2026-11-23 17:06 IST",
+"horizon_days": 7,
+"target_date": "2026-11-30",
+"model_version": "v1.1",
+"buy_call": "wait",
+"expected_move_rs": -5.68,
+"rule": {
+"days": 7,
+"pass_pct": 100,
+"band_pct": 1.0
+},
+"inputs": {
+"pet_rs": 81.66,
+"pet_rs_n_days_ago": 87.34,
+"poy_rs": 93.46,
+"spread_rs": 11.79
+}
 }
 ]
 }
