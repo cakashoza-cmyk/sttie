@@ -189,7 +189,7 @@
   "latest_gap_pct": -6.4
  },
  "version": "v1.1",
- "updated_ist": "2026-11-25 05:13 IST",
+ "updated_ist": "2026-11-25 17:26 IST",
  "horizons": {
   "7": {
    "lag_days": 0,
@@ -211,7 +211,7 @@
    "train_n": 0,
    "train_rmse_pct": 0.0,
    "train_first": "2022-12-02",
-   "train_last": "2026-11-24",
+   "train_last": "2026-11-25",
    "error_band_rs": 2.94,
    "error_band_basis": "80th percentile of back-test errors (too few live results yet)"
   },
@@ -235,12 +235,12 @@
    "train_n": 0,
    "train_rmse_pct": 0.0,
    "train_first": "2022-12-02",
-   "train_last": "2026-11-24",
+   "train_last": "2026-11-25",
    "error_band_rs": 5.28,
    "error_band_basis": "80th percentile of back-test errors (too few live results yet)"
   }
  },
- "spread_rs": 11.74,
+ "spread_rs": 11.67,
  "backtest": {
   "7": {
    "n": 142,
@@ -263,7 +263,7 @@
    "err_band_rs": 5.28
   }
  },
- "data_last_date": "2026-11-24",
+ "data_last_date": "2026-11-25",
  "formula": "STTIE prediction ledger, scoring and learning. Numbers only from data/live.json (public sources).\nNo AI is used anywhere here; every number is plain arithmetic or least squares, written to JSON.\n\nTarget: China-cost-based POY estimate in Rs/kg, ex-VAT, ex-GST\n  PET cost  = (0.865*PTA + 0.335*MEG) / 1.13 * (INR per CNY) / 1000\n  spread    = median over last 60 trading days of (PSF/1.13*INRperCNY/1000 - PET cost)   [China market spread, proxy]\n  POY est.  = PET cost + spread\nForecast of PET % change over h days (h = 7, 30):\n  dPET% = w_mom * (PET % change over last h days)\n        + w_brent * (Brent % change over the h days ending L days ago)\n        + w_fx * (INR-per-CNY % change over last h days)\n  weights re-fitted every run by ridge least squares on realised history (heavy shrinkage toward 'no change');\n  Brent lag L re-chosen every run from {0,3,7,14,21} days by best fit on realised history.",
  "band_pct": {
   "7": 1.0,
@@ -277,13 +277,13 @@
    "band_pct": 1.0
   },
   "backtest": {
-   "n": 708,
+   "n": 709,
    "start": "2023-12-13",
    "hit_rate": 42.9,
    "by_call": {
     "wait": {
-     "n": 208,
-     "hit_rate": 39.4
+     "n": 209,
+     "hit_rate": 39.2
     },
     "buy small": {
      "n": 272,
@@ -314,7 +314,7 @@
   "30-day fx: weight set to 0: out-of-sample error was Rs 3.54/kg with it and Rs 3.5/kg without it, so it did not cut error by at least 1%.",
   "30-day: no variable has proven predictive value yet, so the forecast is 'no change' and the app makes no strong buy/wait call.",
   "Import check back-test: the month-ahead 'import gap' call (it assumes this month's gap persists) held 78.6% of the time over 42 months. Latest gap -6.4% (2026-10): imports look dearer than usual.",
-  "Rule of thumb 1 ('mills follow PTA/MEG within a week') back-test since 2023-12-13: right 42.9% of 708 days (wait: 39.4% of 208, buy small: 42.6% of 272, buy now: 46.5% of 228). On China data, not Indian mill quotes.",
+  "Rule of thumb 1 ('mills follow PTA/MEG within a week') back-test since 2023-12-13: right 42.9% of 709 days (wait: 39.2% of 209, buy small: 42.6% of 272, buy now: 46.5% of 228). On China data, not Indian mill quotes.",
   "Live track record: learning, too few results yet (0 scored)."
  ]
 }

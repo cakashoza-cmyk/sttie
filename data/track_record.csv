@@ -11,3 +11,6 @@ id,kind,made_on,horizon_days,target_date,model_version,buy_call,direction,pred_p
 2026-11-24-7d,model,2026-11-24,7,2026-12-01,v1.1,buy as needed,flat,0.0,93.42,,2.94,,False,,,,,,,,93.42,81.68
 2026-11-24-30d,model,2026-11-24,30,2026-12-24,v1.1,buy as needed,flat,-0.0,93.42,,5.28,imports look dearer than usual,False,,,,,,,,93.42,81.68
 2026-11-24-rule1,rule1,2026-11-24,7,2026-12-01,v1.1,wait,,,,-3.15,,,,,,,,,,,93.42,81.68
+2026-11-25-7d,model,2026-11-25,7,2026-12-02,v1.1,buy as needed,flat,0.0,95.6,,2.94,,False,,,,,,,,95.6,83.92
+2026-11-25-30d,model,2026-11-25,30,2026-12-25,v1.1,buy as needed,flat,-0.0,95.6,,5.28,imports look dearer than usual,False,,,,,,,,95.6,83.92
+2026-11-25-rule1,rule1,2026-11-25,7,2026-12-02,v1.1,buy now,,,,1.56,,,,,,,,,,,95.6,83.92
