@@ -1,7 +1,7 @@
 id,kind,made_on,horizon_days,target_date,model_version,buy_call,direction,pred_pct,pred_poy_rs,expected_move_rs,error_band_rs,import_call,model_has_edge,scored,realised_on,realised_poy_rs,error_rs,hit_direction,hit_buy_call,hit_import,poy_rs_at_call,pet_rs_at_call
-2026-11-19-7d,model,2026-11-19,7,2026-11-26,v1.1,buy as needed,flat,-0.0,94.39,,2.92,,False,,,,,,,,94.39,82.57
+2026-11-19-7d,model,2026-11-19,7,2026-11-26,v1.1,buy as needed,flat,-0.0,94.39,,2.92,,False,True,2026-11-26,97.44,-3.05,False,False,,94.39,82.57
 2026-11-19-30d,model,2026-11-19,30,2026-12-19,v1.1,buy as needed,flat,-0.0,94.39,,5.2,imports look dearer than usual,False,,,,,,,,94.39,82.57
-2026-11-19-rule1,rule1,2026-11-19,7,2026-11-26,v1.1,wait,,,,-3.85,,,,,,,,,,,94.39,82.57
+2026-11-19-rule1,rule1,2026-11-19,7,2026-11-26,v1.1,wait,,,,-3.85,,,,True,2026-11-26,97.44,-6.9,,False,,94.39,82.57
 2026-11-20-7d,model,2026-11-20,7,2026-11-27,v1.1,buy as needed,flat,-0.0,95.86,,2.94,,False,,,,,,,,95.86,84.05
 2026-11-20-30d,model,2026-11-20,30,2026-12-20,v1.1,buy as needed,flat,-0.0,95.86,,5.2,imports look dearer than usual,False,,,,,,,,95.86,84.05
 2026-11-20-rule1,rule1,2026-11-20,7,2026-11-27,v1.1,wait,,,,-4.13,,,,,,,,,,,95.86,84.05
@@ -14,3 +14,6 @@ id,kind,made_on,horizon_days,target_date,model_version,buy_call,direction,pred_p
 2026-11-25-7d,model,2026-11-25,7,2026-12-02,v1.1,buy as needed,flat,0.0,95.6,,2.94,,False,,,,,,,,95.6,83.92
 2026-11-25-30d,model,2026-11-25,30,2026-12-25,v1.1,buy as needed,flat,-0.0,95.6,,5.28,imports look dearer than usual,False,,,,,,,,95.6,83.92
 2026-11-25-rule1,rule1,2026-11-25,7,2026-12-02,v1.1,buy now,,,,1.56,,,,,,,,,,,95.6,83.92
+2026-11-26-7d,model,2026-11-26,7,2026-12-03,v1.2,buy as needed,flat,-0.26,97.22,,2.85,,True,,,,,,,,97.44,85.88
+2026-11-26-30d,model,2026-11-26,30,2026-12-26,v1.2,buy as needed,flat,-0.0,97.44,,5.32,imports look dearer than usual,False,,,,,,,,97.44,85.88
+2026-11-26-rule1,rule1,2026-11-26,7,2026-12-03,v1.2,buy now,,,,2.86,,,,,,,,,,,97.44,85.88
