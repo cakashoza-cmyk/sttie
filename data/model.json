@@ -197,7 +197,7 @@
   "latest_gap_pct": -6.4
  },
  "version": "v1.2",
- "updated_ist": "2026-11-27 17:09 IST",
+ "updated_ist": "2026-11-28 04:36 IST",
  "horizons": {
   "7": {
    "lag_days": 0,
@@ -208,9 +208,9 @@
      0
     ],
     "why": {
-     "momentum": "weight set to 0: out-of-sample error was Rs 1.8/kg with it and Rs 1.75/kg without it, so it did not cut error by at least 1%",
-     "brent": "earned weight: out-of-sample error Rs 1.75/kg with it vs Rs 1.79/kg without it",
-     "fx": "weight set to 0: out-of-sample error was Rs 1.75/kg with it and Rs 1.76/kg without it, so it did not cut error by at least 1%"
+     "momentum": "weight set to 0: out-of-sample error was Rs 1.8/kg with it and Rs 1.76/kg without it, so it did not cut error by at least 1%",
+     "brent": "earned weight: out-of-sample error Rs 1.76/kg with it vs Rs 1.79/kg without it",
+     "fx": "weight set to 0: out-of-sample error was Rs 1.76/kg with it and Rs 1.76/kg without it, so it did not cut error by at least 1%"
     }
    },
    "w_momentum": 0.0,
@@ -312,9 +312,9 @@
  },
  "lessons": [
   "7-day back-test (2023-12-20 to 2026-11-20, 142 calls): direction right 38.7% vs 33.8% for 'assume no change'; average error Rs 1.76/kg vs Rs 1.8/kg for 'no change'. The model beats 'no change'.",
-  "7-day momentum: weight set to 0: out-of-sample error was Rs 1.8/kg with it and Rs 1.75/kg without it, so it did not cut error by at least 1%.",
-  "7-day brent: earned weight: out-of-sample error Rs 1.75/kg with it vs Rs 1.79/kg without it.",
-  "7-day fx: weight set to 0: out-of-sample error was Rs 1.75/kg with it and Rs 1.76/kg without it, so it did not cut error by at least 1%.",
+  "7-day momentum: weight set to 0: out-of-sample error was Rs 1.8/kg with it and Rs 1.76/kg without it, so it did not cut error by at least 1%.",
+  "7-day brent: earned weight: out-of-sample error Rs 1.76/kg with it vs Rs 1.79/kg without it.",
+  "7-day fx: weight set to 0: out-of-sample error was Rs 1.76/kg with it and Rs 1.76/kg without it, so it did not cut error by at least 1%.",
   "7-day: the biggest driver in the fitted model is Brent (weights: momentum 0.0, Brent 0.0722 at 0-day lag, FX 0.0).",
   "30-day back-test (2023-12-20 to 2026-10-23, 138 calls): direction right 38.4% vs 38.4% for 'assume no change'; average error Rs 3.45/kg vs Rs 3.45/kg for 'no change'. The model does NOT beat 'no change' yet, so treat its calls as weak.",
   "30-day momentum: weight set to 0: out-of-sample error was Rs 3.78/kg with it and Rs 3.79/kg without it, so it did not cut error by at least 1%.",
