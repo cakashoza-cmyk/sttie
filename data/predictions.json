@@ -170,7 +170,16 @@
 "import_rs": 101.14,
 "gap_month": "2026-10",
 "gap_pct": -6.4
-}
+},
+"scored": true,
+"realised_on": "2026-11-27",
+"realised_poy_rs": 97.73,
+"realised_pct": 2.73,
+"error_rs": -1.87,
+"hit_direction": false,
+"hit_buy_call": false,
+"hit_import": null,
+"within_band": true
 },
 {
 "id": "2026-11-20-30d",
@@ -237,7 +246,13 @@
 "pet_rs_n_days_ago": 88.18,
 "poy_rs": 95.86,
 "spread_rs": 11.82
-}
+},
+"scored": true,
+"realised_on": "2026-11-27",
+"realised_poy_rs": 97.73,
+"realised_move_rs": 1.87,
+"error_rs": -6.0,
+"hit_buy_call": false
 },
 {
 "id": "2026-11-23-7d",
@@ -685,6 +700,118 @@
 "pet_rs_n_days_ago": 83.02,
 "poy_rs": 97.44,
 "spread_rs": 11.56
+}
+},
+{
+"id": "2026-11-27-7d",
+"made_on": "2026-11-27",
+"logged_ist": "2026-11-27 17:09 IST",
+"horizon_days": 7,
+"target_date": "2026-12-04",
+"model_version": "v1.2",
+"pred_pct": -0.07,
+"direction": "flat",
+"pred_poy_rs": 97.67,
+"error_band_rs": 2.87,
+"buy_call": "buy as needed",
+"raw_buy_call": "buy as needed",
+"model_has_edge": true,
+"import_call": null,
+"inputs": {
+"pta_cny": 6086.0,
+"meg_cny": 5268.0,
+"brent": 91.8,
+"usdinr": 92.45,
+"usdcny": 6.6602,
+"inr_per_cny": 13.881,
+"pet_rs": 86.35,
+"spread_rs": 11.39,
+"poy_rs": 97.73,
+"features_pct": [
+3.59,
+-1.03,
+0.01
+],
+"weights": [
+0.0,
+0.0722,
+0.0
+],
+"brent_lag_days": 0,
+"repo_pct": 5.5,
+"cc_rate_pct": 9.5,
+"carry_rs": 0.18,
+"duty_mult": 1.055,
+"import_rs": 103.11,
+"gap_month": "2026-10",
+"gap_pct": -6.4
+}
+},
+{
+"id": "2026-11-27-30d",
+"made_on": "2026-11-27",
+"logged_ist": "2026-11-27 17:09 IST",
+"horizon_days": 30,
+"target_date": "2026-12-27",
+"model_version": "v1.2",
+"pred_pct": -0.0,
+"direction": "flat",
+"pred_poy_rs": 97.73,
+"error_band_rs": 5.32,
+"buy_call": "buy as needed",
+"raw_buy_call": "buy as needed",
+"model_has_edge": false,
+"import_call": "imports look dearer than usual",
+"inputs": {
+"pta_cny": 6086.0,
+"meg_cny": 5268.0,
+"brent": 91.8,
+"usdinr": 92.45,
+"usdcny": 6.6602,
+"inr_per_cny": 13.881,
+"pet_rs": 86.35,
+"spread_rs": 11.39,
+"poy_rs": 97.73,
+"features_pct": [
+-9.34,
+-22.99,
+-2.82
+],
+"weights": [
+0.0,
+0.0,
+0.0
+],
+"brent_lag_days": 0,
+"repo_pct": 5.5,
+"cc_rate_pct": 9.5,
+"carry_rs": 0.76,
+"duty_mult": 1.055,
+"import_rs": 103.11,
+"gap_month": "2026-10",
+"gap_pct": -6.4
+}
+},
+{
+"id": "2026-11-27-rule1",
+"kind": "rule1",
+"made_on": "2026-11-27",
+"logged_ist": "2026-11-27 17:09 IST",
+"horizon_days": 7,
+"target_date": "2026-12-04",
+"model_version": "v1.2",
+"buy_call": "buy now",
+"expected_move_rs": 3.0,
+"rule": {
+"days": 7,
+"pass_pct": 100,
+"band_pct": 1.0
+},
+"inputs": {
+"pet_rs": 86.35,
+"pet_rs_n_days_ago": 83.35,
+"poy_rs": 97.73,
+"spread_rs": 11.39
 }
 }
 ]
